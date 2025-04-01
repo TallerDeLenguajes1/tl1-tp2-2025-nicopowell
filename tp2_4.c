@@ -22,9 +22,12 @@ int main(){
     compus[i].anio = (rand() % (2024 - 2015 + 1)) + 2015;
     compus[i].cantidad_nucleos = (rand() % (8 - 1 + 1)) + 1;
 
-    printf("%d  ", compus[i].cantidad_nucleos);
+    compus[i].tipo_cpu = (char *)malloc(10 * sizeof(char));
+    strcpy(compus[i].tipo_cpu, tipos[(rand() % 3) + 1]);
   }
   
-
+  for(int i = 0; i < N; i++){
+    free(compus[i].tipo_cpu);
+  }
   return 0;
 }
