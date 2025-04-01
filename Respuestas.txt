@@ -1,0 +1,8 @@
+¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+No podemos ver el archivo debido a que este fue creado en una rama diferente a la rama main, y al no haber hecho un merge, todavia no trajimos dichos cambios a main
+
+¿Qué diferencias nota?
+Observamos que las ramas tomaron dos caminos distintos, ya que la rama main tuvo cambios luego de la creacion de la rama Opcion_2, por lo que se observa que dichas ramas tienen caminos separados
+
+¿Qué nota?
+Luego de realizar el merge observamos como la rama Opcion_2 se unio con la rama main, lo que quiere decir que todos los cambios realizados en la rama Opcion_2 fueron incluidos en main, entonces ahora podemos ver todos los archivos que creamos anteriormente

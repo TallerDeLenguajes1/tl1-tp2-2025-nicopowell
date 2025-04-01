@@ -12,5 +12,6 @@ int main(){
     *(punt + i) = 1 + rand()%100;
     printf("%f  ", *(punt + i));
   }
-
+  
+  return 0;
 }
