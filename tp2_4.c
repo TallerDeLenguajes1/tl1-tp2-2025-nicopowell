@@ -11,6 +11,7 @@ struct compu {
   char *tipo_cpu; // Tipo de procesador (apuntador a cadena de caracteres)
 };
 
+void listarPCs(struct compu pcs[], int cantidad);
 
 int main(){
   srand(time(NULL));
@@ -25,9 +26,21 @@ int main(){
     compus[i].tipo_cpu = (char *)malloc(10 * sizeof(char));
     strcpy(compus[i].tipo_cpu, tipos[(rand() % 3) + 1]);
   }
+
+  listarPCs(compus, N);
   
   for(int i = 0; i < N; i++){
     free(compus[i].tipo_cpu);
   }
   return 0;
+}
+
+void listarPCs(struct compu pcs[], int cantidad){
+  for (int i = 0; i < cantidad; i++) {
+    printf("\n===== Computadora %d =====\n", i+1);
+    printf("Velocidad de procesamiento (GHz): %d\n", pcs[i].velocidad);
+    printf("Anio de fabricacion: %d\n", pcs[i].anio);
+    printf("Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
+    printf("Tipo de procesador: %s\n", pcs[i].tipo_cpu);
+  }
 }
