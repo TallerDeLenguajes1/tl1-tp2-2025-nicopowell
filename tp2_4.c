@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#define N 5
 
 struct compu {
   int velocidad; // Velocidad de procesamiento en GHz (valor entre 1 y 3)
@@ -9,6 +13,18 @@ struct compu {
 
 
 int main(){
+  srand(time(NULL));
+  struct compu compus[N];
+  char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
+
+  for(int i = 0; i < N; i++){
+    compus[i].velocidad = (rand() % (3 - 1 + 1)) + 1;
+    compus[i].anio = (rand() % (2024 - 2015 + 1)) + 2015;
+    compus[i].cantidad_nucleos = (rand() % (8 - 1 + 1)) + 1;
+
+    printf("%d  ", compus[i].cantidad_nucleos);
+  }
+  
 
   return 0;
 }
