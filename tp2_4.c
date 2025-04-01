@@ -13,6 +13,7 @@ struct compu {
 
 void listarPCs(struct compu pcs[], int cantidad);
 void mostrarMasVieja(struct compu pcs[], int cantidad);
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
 
 int main(){
   srand(time(NULL));
@@ -30,6 +31,7 @@ int main(){
 
   listarPCs(compus, N);
   mostrarMasVieja(compus, N);
+  mostrarMasVeloz(compus, N);
   
   for(int i = 0; i < N; i++){
     free(compus[i].tipo_cpu);
@@ -60,4 +62,19 @@ void mostrarMasVieja(struct compu pcs[], int cantidad){
   printf("Anio de fabricacion: %d\n", pcs[mas_vieja].anio);
   printf("Cantidad de nucleos: %d\n", pcs[mas_vieja].cantidad_nucleos);
   printf("Tipo de procesador: %s\n", pcs[mas_vieja].tipo_cpu);
+}
+
+void mostrarMasVeloz(struct compu pcs[], int cantidad){
+  int mas_veloz = 0;
+  for (int i = 1; i < cantidad; i++) {
+    if (pcs[i].velocidad > pcs[mas_veloz].velocidad) {
+      mas_veloz = i;
+    }
+  }
+
+  printf("\n===== Computadora mas veloz =====\n");
+  printf("Velocidad de procesamiento (GHz): %d\n", pcs[mas_veloz].velocidad);
+  printf("Anio de fabricacion: %d\n", pcs[mas_veloz].anio);
+  printf("Cantidad de nucleos: %d\n", pcs[mas_veloz].cantidad_nucleos);
+  printf("Tipo de procesador: %s\n", pcs[mas_veloz].tipo_cpu);
 }
